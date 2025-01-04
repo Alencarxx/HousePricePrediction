@@ -46,4 +46,4 @@ def train_model(csv_path, model_path):
     print(f"Modelo salvo em {model_path}")
 
 if __name__ == "__main__":
-    train_model("../data/kc-house-data.csv", "../src/model/house_price_model.pkl")
+    train_model("G:/Meu Drive/Portifolio_IA/04 - Previsão Preça Casa/Codificação/HousePricePrediction/data/kc-house-data.csv", "G:/Meu Drive/Portifolio_IA/04 - Previsão Preça Casa/Codificação/HousePricePrediction/src/model/house_price_model.pkl")

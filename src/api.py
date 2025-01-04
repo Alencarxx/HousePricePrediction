@@ -6,7 +6,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Carregar o modelo e os escaladores
-MODEL_PATH = "./model/house_price_model.pkl"
+MODEL_PATH = "G:/Meu Drive/Portifolio_IA/04 - Previsão Preça Casa/Codificação/HousePricePrediction/src/model/house_price_model.pkl"
 with open(MODEL_PATH, 'rb') as file:
     model, scaler_X, scaler_y = pickle.load(file)
 
@@ -30,10 +30,10 @@ def predict():
         prediction_scaled = model.predict(features_scaled)
         prediction = scaler_y.inverse_transform(prediction_scaled)[0][0]
         
-        # Retornar resultado
+        # Converter para tipo Python nativo antes de retornar
         return jsonify({
             'success': True,
-            'prediction': round(prediction, 2)
+            'prediction': float(round(prediction, 2))
         })
     except Exception as e:
         return jsonify({
